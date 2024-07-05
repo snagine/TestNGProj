@@ -23,10 +23,6 @@
 				</methods>
 			</class>
 			<class name="com.shy.WebTest">
-				<methods>
-					<include name="loadWebpage"/>
-					<include name="checkText"/>
-				</methods>
 			</class>
 		</classes>
 	</test>

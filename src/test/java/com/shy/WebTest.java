@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -14,35 +15,46 @@ import java.time.Duration;
 public class WebTest {
 
     ChromeOptions options = new ChromeOptions();
+    //options.setImplicitWaitTimeout(Duration.ofSeconds(1));
+
     WebDriver driver;
     @BeforeTest
     public void setup() {
         driver = new ChromeDriver(options);
-    }
-
-    @Test
-    public void loadWebpage() {
-        driver.get("https://www.google.com");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
     }
 
     @Test(enabled = false)
-    public void checkText(){
+    public void testAutoWebpage() {
+        driver.get("https://trytestingthis.netlify.app/");
+    }
 
-        WebElement element = driver.findElement(By.id("//*[@id=\"APjFqb\"]"));
-        element.sendKeys("Shylaja Nagineni");
+    @Test(enabled = false)
+    public void testDuckWebpage() {
+        //driver.get("https://duckduckgo.com");
+        //driver.findElement(By.xpath("//*[@id='searchbox_input']")); //duck
+    }
+
+    @Test
+    public void testSeleWebpage() {
+        driver.get("https://www.selenium.dev/selenium/web/dynamic.html");
+        driver.findElement(By.id("adder")).click();
+        WebElement added = driver.findElement(By.id("box0"));
+        Assert.assertEquals("redbox", added.getDomAttribute("class"));
+    }
+
+
+    @Test
+    public void testGoogleLoad(){
+        driver.get("https://www.google.com");
         try {
+            WebElement element = driver.findElement(By.xpath("//*[@id='fname']"));
             Thread.sleep(2000);
+            element.sendKeys("Shylaja Nagineni");
+            driver.findElement(By.name("btnK")).click();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-//        driver.get("http://www.google.com");
-//        driver.findElement(By.cssSelector("[name='q']")).sendKeys("webElement");
-//
-//        // Get attribute of current active element
-//        String attr = driver.switchTo().activeElement().getAttribute("title");
-//        System.out.println(attr);
     }
 
     @AfterTest
