@@ -3,25 +3,25 @@
 <suite name="All Test Suite">
 	<test verbose="2" preserve-order="true" name="/Users/shylajanagineni/Projects/Java-Gradle-Sel-TestNG-11">
 		<classes>
-<!-- 			<class name="com.shy.CheckHooks"> -->
-<!-- 				<methods> -->
-<!-- 					<include name="sampleTest"/> -->
-<!-- 				</methods> -->
-<!-- 			</class> -->
-<!-- 			<class name="com.shy.MathOpsTest"> -->
-<!-- 				<methods> -->
-<!-- 					<include name="getUnique"/> -->
-<!-- 				</methods> -->
-<!-- 			</class>			<class name="com.shy.CheckHooks"> -->
-<!-- 				<methods> -->
-<!-- 					<include name="sampleTest"/> -->
-<!-- 				</methods> -->
-<!-- 			</class> -->
-<!-- 			<class name="com.shy.MathOpsTest"> -->
-<!-- 				<methods> -->
-<!-- 					<include name="getUnique"/> -->
-<!-- 				</methods> -->
-<!-- 			</class> -->
+			<class name="com.shy.CheckHooks">
+				<methods>
+					<include name="sampleTest"/>
+				</methods>
+			</class>
+			<class name="com.shy.MathOpsTest">
+				<methods>
+					<include name="getUnique"/>
+				</methods>
+			</class>			<class name="com.shy.CheckHooks">
+				<methods>
+					<include name="sampleTest"/>
+				</methods>
+			</class>
+			<class name="com.shy.MathOpsTest">
+				<methods>
+					<include name="getUnique"/>
+				</methods>
+			</class>
 			<class name="com.shy.WebTest">
 				<methods>
 					<include name="loadWebpage"/>
